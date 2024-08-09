@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for submodules
+          fetch-depth: 0 # Fetch all history for submodules
 
       - name: Install dependencies
         run: npm install
@@ -23,8 +23,8 @@ jobs:
       - name: Push to build branch
         uses: actions/checkout@v3
         with:
-          ref: refs/heads/build  # Check out the build branch
-          fetch-depth: 0  # Fetch all history for submodules
+          ref: refs/heads/build # Check out the build branch
+          fetch-depth: 0 # Fetch all history for submodules
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit and push
@@ -32,6 +32,5 @@ jobs:
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git add .
-          git commit   
- -m "Build: ${{ github.sha }} ${{ github.event.head_commit.message }}"
+          git commit -m "Build: ${{ github.sha }} ${{ github.event.head_commit.message }}"
           git push origin build
