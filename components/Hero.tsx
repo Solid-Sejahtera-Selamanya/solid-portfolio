@@ -36,7 +36,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, We Are The Argonauts!
+            Hi, We Are Solid Techno ID!
           </p>
 
           <a href="#projects">
