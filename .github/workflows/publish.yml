@@ -33,4 +33,4 @@ jobs:
           git config --local user.email "actions@github.com"
           git add .
           git commit -m "Build: ${{ github.sha }} ${{ github.event.head_commit.message }}"
-          git push origin build
+          git push -u origin build
